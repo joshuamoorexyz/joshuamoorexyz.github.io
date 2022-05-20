@@ -1,5 +1,14 @@
 <html lang="en">
   <head>
+    <style>
+      code {
+  font-family: Consolas,"courier new";
+  color: crimson;
+  background-color: #f1f1f1;
+  padding: 2px;
+  font-size: 105%;
+}
+    </style>
     <title>Joshua Moore</title>
     <meta
       name="description"
@@ -73,15 +82,215 @@
             <a href="https://joshuamoorexyz.github.io/portfolio.html">Projects</a>
 
 
+            <br>
+            <h2><i> My Projects:</i></h2>
+            <br>
+      
+            <h3>Introduction:</h3>
+            <p> Including a portfolio of my work as an software engineer is in part to show my acquired skills, but also to inspire collaboration in open source projects im involved in or inspire other potentital engineers. Projects im currently involved in are listed on the Home page of this site. Finally, although not posted, this site is itself an attempt to demonstrate my skills, so thanks for visiting!</p>
+            <br>
+            <br>
+      
+            </p>
+
+
+
+
+          </div>
+          <div class="bio-switcher">
+            <div class="toggler">
+              <button id="short" class="show">DRL</button>
+              <!-- <button id="long">Education</button> -->
+            </div>
+            <div class="bio short show">
+              <h4>Deep learning projects Summer 2022</h4>
+              <p> 
+                <br>
+        
+              <b>Skills Learned:</b>
+              <br>
+        
+        Key insight into differences of AI,ML,and DL
+        Tensorflow and Keras
+        Google Collaboratory workflow
+        <br>
+        </br>
+        Github Repository with code developed and notebooks used: <a href="https://github.com/joshuamoorexyz/deep-learning-illustrated">Github Repository</a>
+        <br>
+        </br>
+        
+        This video was a helpful reference: <a href="https://youtu.be/tPYj3fFJGjk">Video Reference Used</a>
+        <br>
+              </br>
+        
+        <b>Whats the difference? Artificial intelligence, Machine learning, Neural Networks (deep learning)</b>
+        
+        <br>
+        </br>
+        Artificial Intelligence: Great set of rules.
+        <br>
+        </br>
+        Machine Learning: Generates rules for us using an algorithm
+        <br>
+        </br>
+        Neural Networks: A form of machine learning that uses a layered representation of data.
+        <br>
+        </br>
+        
+        <b>Software and libraries used:</b>
+        <br>
+        </br>
+        Tensorflow: TensorFlow is a free and open-source software library for machine learning and artificial intelligence
+        <br>
+        </br>
+        Keras: Keras is an open-source software library that provides a Python interface for artificial neural networks
+        <br>
+        </br>
+        
+        Google Collaboratory: Colab notebooks allow you to combine executable code and rich text in a single document, along with images, HTML, LaTeX and more
+        
+        <br>
+        </br>
+        
+        <b>Practical application of skills:</b>
+        <br>
+        </br>
+        Several small projects from the book "Deep Learning Illustrated":
+        <br>
+        </br>
+        I forked a repository of google collaboratory notebooks provided by the author, which i then used to go through these guided projects:
+        <br>
+        </br>
+        <h3><b>1. Shallownet in Keras</b></h3>
+        <br>
+        </br>
+        <!-- Put image here of MNSIT digits -->
+        <img src="images/mnsit.jpg" alt="Model to identify MNSIT digits shown here">
+        <br>
+        </br>
+        Description: An artificial nueral network is created with keras and TensorFlow. This network is used to predict handwritten digits from the MNIST Handwritten digits shown above.
+        The network's architecture consists of an input layer for each 28x28 pixel image of a digit, a single hidden-layer consisting of 64 sigmoid nuerons, and an output layer of 10 softmax nuerons which contain the probabality that the digit is a certain value from 0 - 9.
+        <br>
+        </br>
+        Steps Taken:
+        <br>
+        </br>
+        1.1) Import dependencies
+        <br>
+        </br>
+        <code>
+          import keras <br>
+          from keras.datasets import mnist <br>
+          from keras.models import Sequential <br>
+          from keras.layers import Dense <br>
+          from keras.optimizers import SGD <br>
+          from matplotlib import pyplot as plt <br>
+
+        </code>
+
+        <br>
+        </br>
+        
+        1.2) Load MNIST data 
+        <br>
+        </br>
+        <code>
+
+          (X_train, y_train), (X_valid, y_valid) = mnist.load_data() <br>
+          X_train.shape <br>
+          y_train.shape <br>
+          X_valid.shape <br>
+          y_valid.shape <br>
+
+
+
+        </code>
+
+        <br>
+        </br>
+        
+        1.3) Reformat the data
+        <br>
+        </br>
+        - Flatten 2d image to 1d
+        - Convert pixel integers to floats
+        <br>
+      </br>
+
+
+      <code>
+        X_train = X_train.reshape(60000, 784).astype('float32') <br>
+        X_valid = X_valid.reshape(10000, 784).astype('float32') <br>
+
+      </code>
+        - Convert integer labels to one-hot 
+        <br>
+      </br>
+      <code>
+
+        X_train /= 255 <br>
+        X_valid /= 255 <br>
+        n_classes = 10 <br>
+        y_train = keras.utils.to_categorical(y_train, n_classes) <br>
+        y_valid = keras.utils.to_categorical(y_valid, n_classes) <br>
+      </code>
+
+        1.4) Architect the network
+        <br>
+        </br>
+      <code>
+        model = Sequential() <br>
+        model.add(Dense(64, activation='sigmoid', input_shape=(784,))) <br>
+        model.add(Dense(10, activation='softmax')) <br>
+        model.compile(loss='mean_squared_error', optimizer=SGD(lr=0.01), metrics=['accuracy']) <br>
+
+      </code>
+
+
+
+        1.5) Train the network 
+        <br>
+        </br>
+        <code>
+          model.fit(X_train, y_train, batch_size=128, epochs=200, verbose=1, validation_data=(X_valid, y_valid)) <br>
+        </code>
 
 
 
 
 
-            
-            <p><i> My Projects:</i></p>
+        Outcomes: The network approaches 86% accuracy after 200 epochs of training as shown below
+
+        <br>
+        </br>
+        <!-- Put image here of acc -->
+        <img src="images/acc.jpg" alt="accuracy of model">
+
+            </div>
+            <div class="bio long">
+            </div>
+              </p>
+            </div>
+          </div>
+          <div class="dark-mode-toggler">
+            <input type="checkbox" id="toggler" />
+            <label for="toggler" aria-label="Toggler for Dark Mode"></label>
+          </div>
+        </div>
+    
+        <script src="./script.js"></script>
+      </body>
+    </html>
+
+
+
+
+
+
+
+
+	
     </body>
-</html>
 
 
 

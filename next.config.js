@@ -7,7 +7,7 @@ module.exports = nextConfig
 
 module.exports = {
   images: {
-    domains: ['raw.githubusercontent.com'],
+    domains: ['media.licdn.com'],
   },
 };
 

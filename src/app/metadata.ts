@@ -2,6 +2,6 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: `Portfolio | Aayam Raj Shakya`,
-  description: `A computer science student, an undergraduate researcher, and an aspiring AI/ML engineer`,
+  title: `Portfolio | Joshua J Moore`,
+  description: `PhD Student @ Mississippi State University focused on wireless communications`,
 };

@@ -10,7 +10,7 @@ export const RESUME_DATA = {
   summary:
     "I am currently pursuing my PhD in Computer Engineering at Mississippi State University. My research areas include O-RAN, NextG technologies, RAN Orchestration, AI/ML in O-RAN among others.",
   avatarUrl:
-    "https://avatars.githubusercontent.com/u/40312633?v=4",
+    "https://media.licdn.com/dms/image/v2/D5603AQEIu7LkDVH9kA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1723001134476?e=1747267200&v=beta&t=79MQlsY93PIpwqQHbyqLaDKr4fvXPQQd9daJAsU2Vl4",
   personalWebsiteUrl: "http://joshmoore.vercel.app/",
   contact: {
     email: "jjm702@msstate.edu",

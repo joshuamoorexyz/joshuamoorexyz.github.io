@@ -1,8 +1,14 @@
 {
   "redirects": [
     {
-      "source": "https://joshuamoorexyz.github.io",
-      "destination": "https://joshuamoorexyz.vercel.app/",
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "joshuamoorexyz.github.io"
+        }
+      ],
+      "destination": "https://joshuamoorexyz.vercel.app/$1",
       "permanent": true
     }
   ]

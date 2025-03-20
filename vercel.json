@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "https://joshuamoorexyz.github.io",
+      "destination": "https://joshuamoorexyz.vercel.app/",
+      "permanent": true
+    }
+  ]
+}
